@@ -4,7 +4,12 @@
  */
 package pootrabajo;
 
+import controlador.Controlador;
+import java.util.List;
 import javax.swing.JOptionPane;
+import modelo.Computadora;
+import modelo.Laptop;
+import modelo.Tablet;
 
 /**
  *
@@ -15,8 +20,14 @@ public class principal extends javax.swing.JFrame {
     /**
      * Creates new form principal
      */
+    
+    private Controlador controlador;
+    private List<Computadora> computadoras;
+    private List<Laptop> laptops;
+    private List<Tablet> tablets;
     public principal() {
         initComponents();
+        controlador = new Controlador(this);
     }
 
     /**
@@ -141,15 +152,10 @@ public class principal extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)))
+                    .addComponent(jButton6)
+                    .addComponent(jButton7)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5))
                 .addGap(58, 58, 58))
         );
         jPanel1Layout.setVerticalGroup(
@@ -214,54 +220,112 @@ public class principal extends javax.swing.JFrame {
     //Ingresar Computadora
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showInputDialog("Ingrese el Fabricante");
-        JOptionPane.showInputDialog("Ingrese el Modelo");
-        JOptionPane.showInputDialog("Ingrese el Microprocesador");
-        JOptionPane.showInputDialog("Ingrese la cantidad de Memoria Ram");
-        JOptionPane.showInputDialog("Ingrese el tipo de Tarjeta gráfica");
-        JOptionPane.showInputDialog("Ingrese el Tamaño de torre");
-        JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
+        String fabricante = JOptionPane.showInputDialog("Ingrese el Fabricante");
+        String modelo = JOptionPane.showInputDialog("Ingrese el Modelo");
+        String microprocesador = JOptionPane.showInputDialog("Ingrese el Microprocesador");
+        String ram = JOptionPane.showInputDialog("Ingrese la cantidad de Memoria RAM");
+        String tarjetaGrafica = JOptionPane.showInputDialog("Ingrese el tipo de Tarjeta gráfica");
+        String torre = JOptionPane.showInputDialog("Ingrese el Tamaño de la torre");
+        String discoDuro = JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
+
+    controlador.ingresarComputadora(fabricante, modelo, microprocesador, ram, tarjetaGrafica, torre, discoDuro);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     //Ingresar Laptop
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showInputDialog("Ingrese el Fabricante");
-        JOptionPane.showInputDialog("Ingrese el Modelo");
-        JOptionPane.showInputDialog("Ingrese el Microprocesador");
-        JOptionPane.showInputDialog("Ingrese la cantidad de Memoria Ram");
-        JOptionPane.showInputDialog("Ingrese el Tamaño pantalla");
-        JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
+        String fabricante = JOptionPane.showInputDialog("Ingrese el Fabricante");
+        String modelo = JOptionPane.showInputDialog("Ingrese el Modelo");
+        String microprocesador = JOptionPane.showInputDialog("Ingrese el Microprocesador");
+        String ram = JOptionPane.showInputDialog("Ingrese la cantidad de Memoria RAM");
+        String pantalla = JOptionPane.showInputDialog("Ingrese el Tamaño de la pantalla");
+        String discoDuro = JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
+
+    // Llamar al controlador para procesar estos datos
+    controlador.ingresarLaptop(fabricante, modelo, microprocesador, ram, pantalla, discoDuro);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     
     //Ingresar Tablet
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showInputDialog("Ingrese el Fabricante");
-        JOptionPane.showInputDialog("Ingrese el Modelo");
-        JOptionPane.showInputDialog("Ingrese el Microprocesador");
-        JOptionPane.showInputDialog("Ingrese el Tamaño pantalla");
-        JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
-        JOptionPane.showInputDialog("¿ Es Capacitiva/Resistiva? ");
-        JOptionPane.showInputDialog("Ingrese el tamaño de memoria NAND");
-        JOptionPane.showInputDialog("Ingrese su sistema operativo");
+
+        String fabricante = JOptionPane.showInputDialog("Ingrese el Fabricante");
+        String modelo = JOptionPane.showInputDialog("Ingrese el Modelo");
+        String microprocesador = JOptionPane.showInputDialog("Ingrese el Microprocesador");
+        String pantalla = JOptionPane.showInputDialog("Ingrese el Tamaño pantalla");
+        String discoDuro = JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
+        String tipoPantalla = JOptionPane.showInputDialog("¿Es Capacitiva o Resistiva?");
+        String nand = JOptionPane.showInputDialog("Ingrese el tamaño de memoria NAND");
+        String sistemaOperativo = JOptionPane.showInputDialog("Ingrese el sistema operativo");
+    
+    controlador.ingresarTablet(fabricante, modelo, microprocesador, pantalla, discoDuro, tipoPantalla, nand, sistemaOperativo);
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     //Ver Computadora
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+     if (controlador.getComputadoras().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "No hay computadoras registradas.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Mostrar los datos de la última computadora ingresada
+            Computadora ultimaComputadora = controlador.getComputadoras().get(controlador.getComputadoras().size() - 1);
 
+            String datos = "Fabricante: " + ultimaComputadora.getFabricante() + "\n" +
+                           "Modelo: " + ultimaComputadora.getModelo() + "\n" +
+                           "Microprocesador: " + ultimaComputadora.getMicroprocesador() + "\n" +
+                           "RAM: " + ultimaComputadora.getRam() + "\n" +
+                           "Tarjeta Gráfica: " + ultimaComputadora.getTarjetaGrafica() + "\n" +
+                           "Tamaño Torre: " + ultimaComputadora.getTorre() + "\n" +
+                           "Disco Duro: " + ultimaComputadora.getDiscoDuro();
+
+            // Mostrar los datos en un JOptionPane
+            JOptionPane.showMessageDialog(this, datos, "Datos de la Computadora", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
         //Ver Laptop
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        if (controlador.getLaptops().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "No hay laptops registradas.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Lógica para mostrar la última laptop
+            Laptop ultimaLaptop = controlador.getLaptops().get(controlador.getLaptops().size() - 1);
+            
+            String datos = "Fabricante: " + ultimaLaptop.getFabricante() + "\n" +
+                           "Modelo: " + ultimaLaptop.getModelo() + "\n" +
+                           "Microprocesador: " + ultimaLaptop.getMicroprocesador() + "\n" +
+                           "RAM: " + ultimaLaptop.getRam() + "\n" +
+                           "Tarjeta Gráfica: " + ultimaLaptop.getPantalla()+ "\n" +
+                           "Disco Duro: " + ultimaLaptop.getDiscoDuro();
+            
+            
+            JOptionPane.showMessageDialog(this, datos, "Datos de la Laptop", JOptionPane.INFORMATION_MESSAGE);
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
         //Ver Tablet
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        if (controlador.getTablets().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "No hay tablets registradas.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Lógica para mostrar la última tablet
+            Tablet ultimaTablet = controlador.getTablets().get(controlador.getTablets().size() - 1);
+            
+            String datos = "Fabricante: " + ultimaTablet.getFabricante() + "\n" +
+                           "Modelo: " + ultimaTablet.getModelo() + "\n" +
+                           "Microprocesador: " + ultimaTablet.getMicroprocesador() + "\n" +
+                           "Pantalla: " + ultimaTablet.getPantalla()+ "\n" +
+                           "Disco Duro: " + ultimaTablet.getDiscoDuro()+ "\n" +
+                           "Tipo de Pantalla: " + ultimaTablet.getTipoPantalla()+ "\n" +
+                           "Memoria Nand: " + ultimaTablet.getMemoriaNAND()+ "\n" +
+                           "Sistema Operativo: " + ultimaTablet.getSistemaOperativo();
+                           
+            
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -303,7 +367,7 @@ public class principal extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
