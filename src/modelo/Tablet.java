@@ -4,10 +4,7 @@
  */
 package modelo;
 
-/**
- *
- * @author Hector Marquez
- */
+
 public class Tablet {
     
     private String fabricante;

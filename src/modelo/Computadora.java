@@ -4,10 +4,7 @@
  */
 package modelo;
 
-/**
- *
- * @author Hector Marquez
- */
+
 public class Computadora {
     private String fabricante;
     private String modelo;
