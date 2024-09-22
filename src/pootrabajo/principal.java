@@ -242,7 +242,6 @@ public class principal extends javax.swing.JFrame {
         String pantalla = JOptionPane.showInputDialog("Ingrese el Tamaño de la pantalla");
         String discoDuro = JOptionPane.showInputDialog("Ingrese la Capacidad de disco duro");
 
-    // Llamar al controlador para procesar estos datos
     controlador.ingresarLaptop(fabricante, modelo, microprocesador, ram, pantalla, discoDuro);
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -269,7 +268,7 @@ public class principal extends javax.swing.JFrame {
      if (controlador.getComputadoras().isEmpty()) {
         JOptionPane.showMessageDialog(this, "No hay computadoras registradas.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            // Mostrar los datos de la última computadora ingresada
+           
             Computadora ultimaComputadora = controlador.getComputadoras().get(controlador.getComputadoras().size() - 1);
 
             String datos = "Fabricante: " + ultimaComputadora.getFabricante() + "\n" +
@@ -279,19 +278,18 @@ public class principal extends javax.swing.JFrame {
                            "Tarjeta Gráfica: " + ultimaComputadora.getTarjetaGrafica() + "\n" +
                            "Tamaño Torre: " + ultimaComputadora.getTorre() + "\n" +
                            "Disco Duro: " + ultimaComputadora.getDiscoDuro();
-
-            // Mostrar los datos en un JOptionPane
+            
             JOptionPane.showMessageDialog(this, datos, "Datos de la Computadora", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
         //Ver Laptop
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
         if (controlador.getLaptops().isEmpty()) {
         JOptionPane.showMessageDialog(this, "No hay laptops registradas.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            // Lógica para mostrar la última laptop
+          
             Laptop ultimaLaptop = controlador.getLaptops().get(controlador.getLaptops().size() - 1);
             
             String datos = "Fabricante: " + ultimaLaptop.getFabricante() + "\n" +
@@ -300,8 +298,7 @@ public class principal extends javax.swing.JFrame {
                            "RAM: " + ultimaLaptop.getRam() + "\n" +
                            "Tarjeta Gráfica: " + ultimaLaptop.getPantalla()+ "\n" +
                            "Disco Duro: " + ultimaLaptop.getDiscoDuro();
-            
-            
+                     
             JOptionPane.showMessageDialog(this, datos, "Datos de la Laptop", JOptionPane.INFORMATION_MESSAGE);
             
         }
@@ -309,11 +306,11 @@ public class principal extends javax.swing.JFrame {
 
         //Ver Tablet
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+      
         if (controlador.getTablets().isEmpty()) {
         JOptionPane.showMessageDialog(this, "No hay tablets registradas.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            // Lógica para mostrar la última tablet
+         
             Tablet ultimaTablet = controlador.getTablets().get(controlador.getTablets().size() - 1);
             
             String datos = "Fabricante: " + ultimaTablet.getFabricante() + "\n" +
