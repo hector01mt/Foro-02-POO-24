@@ -324,7 +324,7 @@ public class principal extends javax.swing.JFrame {
                            "Memoria Nand: " + ultimaTablet.getMemoriaNAND()+ "\n" +
                            "Sistema Operativo: " + ultimaTablet.getSistemaOperativo();
                            
-            
+            JOptionPane.showMessageDialog(this, datos, "Datos de la tablet", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
