@@ -3,53 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+/**
+ *
+ * @author Emily
+ */
 
-
-public class Tablet {
-    
-    private String fabricante;
-    private String modelo;
-    private String microprocesador;
+public class Tablet extends Dispositivo {
     private String pantalla;
     private String discoDuro;
     private String tipoPantalla;
     private String memoriaNAND;
     private String sistemaOperativo;
 
-    // Constructor
-    public Tablet(String fabricante, String modelo, String microprocesador, String pantalla, String discoDuro, String tipoPantalla, String memoriaNAND, String sistemaOperativo) {
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.microprocesador = microprocesador;
+    public Tablet(String fabricante, String modelo, String microprocesador, String pantalla, 
+                  String discoDuro, String tipoPantalla, String memoriaNAND, String sistemaOperativo) {
+        super(fabricante, modelo, microprocesador);  // Llamada al constructor de la clase padre
         this.pantalla = pantalla;
         this.discoDuro = discoDuro;
         this.tipoPantalla = tipoPantalla;
         this.memoriaNAND = memoriaNAND;
         this.sistemaOperativo = sistemaOperativo;
-    }
-
-    public String getFabricante() {
-        return fabricante;
-    }
-
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getMicroprocesador() {
-        return microprocesador;
-    }
-
-    public void setMicroprocesador(String microprocesador) {
-        this.microprocesador = microprocesador;
     }
 
     public String getPantalla() {
@@ -91,7 +64,4 @@ public class Tablet {
     public void setSistemaOperativo(String sistemaOperativo) {
         this.sistemaOperativo = sistemaOperativo;
     }
-    
-    
-    
 }

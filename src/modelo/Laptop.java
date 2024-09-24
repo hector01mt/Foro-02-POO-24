@@ -3,48 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+/**
+ *
+ * @author Emily
+ */
 
-
-public class Laptop {
-    private String fabricante;
-    private String modelo;
-    private String microprocesador;
+public class Laptop extends Dispositivo {
     private String ram;
     private String pantalla;
     private String discoDuro;
 
     public Laptop(String fabricante, String modelo, String microprocesador, String ram, 
                   String pantalla, String discoDuro) {
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.microprocesador = microprocesador;
+        super(fabricante, modelo, microprocesador);  
         this.ram = ram;
         this.pantalla = pantalla;
         this.discoDuro = discoDuro;
-    }
-
-    public String getFabricante() {
-        return fabricante;
-    }
-
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getMicroprocesador() {
-        return microprocesador;
-    }
-
-    public void setMicroprocesador(String microprocesador) {
-        this.microprocesador = microprocesador;
     }
 
     public String getRam() {
@@ -70,7 +44,4 @@ public class Laptop {
     public void setDiscoDuro(String discoDuro) {
         this.discoDuro = discoDuro;
     }
-    
-    
-    
 }
