@@ -62,7 +62,7 @@ public class Controlador {
 }
      
     public void ingresarTablet(String fabricante, String modelo, String microprocesador, String pantalla, String disco, String tipoPantalla, String nand, String so) {
-        // Crear nueva tablet con los datos recibidos
+    
         Tablet tablet = new Tablet(fabricante, modelo, microprocesador, pantalla, disco, tipoPantalla, nand, so);
         tablets.add(tablet);
 
