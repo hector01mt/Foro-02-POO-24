@@ -17,9 +17,9 @@ public class Tablet extends Dispositivo {
 
     public Tablet(String fabricante, String modelo, String microprocesador, String pantalla, 
                   String discoDuro, String tipoPantalla, String memoriaNAND, String sistemaOperativo) {
-        super(fabricante, modelo, microprocesador);  // Llamada al constructor de la clase padre
-        this.pantalla = pantalla;
+        super(fabricante, modelo, microprocesador);  
         this.discoDuro = discoDuro;
+        this.pantalla = pantalla;
         this.tipoPantalla = tipoPantalla;
         this.memoriaNAND = memoriaNAND;
         this.sistemaOperativo = sistemaOperativo;
